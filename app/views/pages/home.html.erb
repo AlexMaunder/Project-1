@@ -1,6 +1,12 @@
 <h1>CodeConqr</h1>
 <p>Pages#Home - Find me in app/views/pages/home.html.erb</p>
 
+<% if @current_user.present? %>
+  <marquee>
+    <h2>Welcome back <%= @current_user.email %></h2>
+  </marquee>
+<% end %>
+
 <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quidem commodi ducimus facere mollitia minus quas est ea quae. Eius consequatur saepe minima facilis officiis qui tenetur, mollitia reprehenderit sequi.</span><span>Itaque reprehenderit, eligendi dicta eum ipsa consequatur officia nostrum nemo eveniet ullam. Aperiam, magni ducimus debitis repellat at eligendi unde facere ipsam, cum, obcaecati perferendis itaque odio labore nam rerum.</span></p>
 
 <h3>Current languages:</h3>

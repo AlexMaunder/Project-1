@@ -1,7 +1,7 @@
-# User.destroy_all
-# u1 = User.create :email => 'jonesy@ga.co', :password => 'chicken'
-# u2 = User.create :email => 'craigsy@ga.co', :password => 'chicken'
-# puts "#{User.count} users"
+User.destroy_all
+u1 = User.create :email => 'jonesy@ga.co', :password => 'chicken'
+u2 = User.create :email => 'craigsy@ga.co', :password => 'chicken'
+puts "#{User.count} users"
 
 Resource.destroy_all
 r1 = Resource.create :title => "JavaScript MDN", :url => "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -38,11 +38,16 @@ l2.resources << r2
 l3.resources << r3
 l4.resources << r4
 
-puts "Books and Languages"
-b1.language << l1
-b2.language << l2
-b3.language << l3
-b4.language << l4
+# puts "Books and Languages"
+# b1.language << l1
+# b2.language << l2
+# b3.language << l3
+# b4.language << l4
+puts "Languages and Books"
+l1.books << b1
+l2.books << b2
+l3.books << b3
+l4.books << b4
 
 puts "Repos and Resources"
 p1.resources << r1 << r2 << r3 << r4
@@ -50,6 +55,6 @@ p2.resources << r2 << r2 << r2 << r2
 p3.resources << r2 << r3 << r2 << r4
 p4.resources << r4 << r3 << r2 << r2
 
-# puts "Repos and Users"
-# u1.repos << p1 << p4
-# u2.repos << p2 << p3
+puts "Repos and Users"
+u1.repos << p1 << p4
+u2.repos << p2 << p3

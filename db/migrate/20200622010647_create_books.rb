@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.text :title
       t.text :image
       t.text :url
-      t.integer :lang_id
+      t.integer :language_id
 
       t.timestamps
     end
