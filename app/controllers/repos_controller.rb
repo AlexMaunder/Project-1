@@ -16,6 +16,22 @@ class ReposController < ApplicationController
   def create
     repo = Repo.create repo_params
     @current_user.repos << repo
+    redirect_to repo_path(repo.id)
+  end
+
+  def edit
+    @repo = Repo.find params[:id]
+  end
+
+  def update
+    repo = Repo.find params[:id]
+    repo.update repo_params
+    redirect_to repo_path
+  end
+
+  def destroy
+    repo = Repo.find params[:id]
+    repo.destroy
     redirect_to repos_path
   end
 

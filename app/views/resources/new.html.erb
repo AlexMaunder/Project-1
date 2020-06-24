@@ -7,7 +7,9 @@
   <%= f.label :url %>
   <%= f.text_field :url %>
 
-  <%# <%= f.label :language_id %> %>
+  <%= f.label :language_id %>
+  <%= f.collection_select :language_ids, Language.order(:title),:id,:title %>
+
   <%= hidden_field_tag :repo_id, params[:repo_id] %>
 
   <%= f.submit %>

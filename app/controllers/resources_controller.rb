@@ -24,15 +24,15 @@ class ResourcesController < ApplicationController
   end
 
   def update
-    resource = Repo.find params[:repo_id]
+    resource = Resource.find params[:id]
     resource.update resource_params
-    redirect_to repo
+    redirect_to repo_path(params[:repo_id])
   end
 
   def destroy
     resource = Resource.find params[:id]
     resource.destroy
-    redirect_to repo_path
+    redirect_to repos_path
   end
 
   private

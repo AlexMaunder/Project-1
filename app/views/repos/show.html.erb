@@ -1,14 +1,32 @@
-<h1><%= @repo.title  %></h1>
+<br>
+  <%= form_for @repo do |f| %>
+<h1><%= f.text_field :title, :required => true %></h1>
+  <h5>
+    <%= f.submit "Save" %>
+    <% end %>
+  </h5>
+
+<%# <%= @repo.resources.group_by{ |i| i.language.image}.each %> %>
+<%# <%= image_tag language.image, :class => 'thumb' if language.image.present? %> %>
 
 <% @repo.resources_by_language.each do |language, resources| %>
     <%= language %> Resources:
     <p></p>
       <% resources.each do |resource| %>
-        <%= link_to resource.title, resource_path(resource.id) %>
+        <%= link_to resource.title, resource_path(resource.id, :repo_id => @repo.id) %>
         <p></p>
     <% end %>
     <br>
 <% end %>
 
+<%# <%= raise "hell" %> %>
+
 
 <%= link_to 'New Resource', new_resource_path(:repo_id => @repo.id) %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= button_to 'Delete Repo', @repo, :method => 'delete' %>
