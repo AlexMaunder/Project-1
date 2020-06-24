@@ -1,22 +1,14 @@
-<h1><%= "#{@repo.title} Links"  %></h1>
+<h1><%= @repo.title  %></h1>
 
-<% @repo.resources.each do |resource| %>
-  <% if resource.present? %>
-    <p>
-      Resource:
-      <%= link_to resource.title, resource.url %>
-    </p>
-  <% end %>
-<%# <%= raise "hell" %> %>
-  <% if resource.language_id.present? %>
-    <p><%= resource.language_id %></p>
-  <% end %>
-
-<% @repo.resources.group(:language_id).each do |language_id, resources| %>
-  <%= Language.find(language_id).name %> Resources:
-  <% resources.each do |resource| %>
-    <%= resource.name %>
-  <% end %>
+<% @repo.resources_by_language.each do |language, resources| %>
+    <%= language %> Resources:
+    <p></p>
+      <% resources.each do |resource| %>
+        <%= link_to resource.title, resource_path(resource.id) %>
+        <p></p>
+    <% end %>
+    <br>
 <% end %>
 
-<% end %>
+
+<%= link_to 'New Resource', new_resource_path(:repo_id => @repo.id) %>

@@ -5,18 +5,38 @@ class ResourcesController < ApplicationController
     @resource = Resource.find params[:repo_id]
   end
 
-  # def new
-  #   @repo = Repo.new
-  # end
-  #
-  # def create
-  #   repo = Repo.create repo_params
-  #   @current_user.repos << repo
-  #   redirect_to root_path
-  # end
-  #
-  # private
-  # def repo_params
-  #   params.require(:repo).permit(:title)
-  # end
+  def show
+    @resource = Resource.find params[:id]
+  end
+
+  def new
+    @resource = Resource.new
+  end
+
+  def create
+    resource = Resource.create resource_params
+    @current_user.repos.find(params["repo_id"]).resources << resource
+    redirect_to repo_path(params["repo_id"])
+  end
+
+  def edit
+    @resource = Resource.find params[:id]
+  end
+
+  def update
+    resource = Repo.find params[:repo_id]
+    resource.update resource_params
+    redirect_to repo
+  end
+
+  def destroy
+    resource = Resource.find params[:id]
+    resource.destroy
+    redirect_to repo_path
+  end
+
+  private
+  def resource_params
+    params.require(:resource).permit(:title, :url)
+  end
 end

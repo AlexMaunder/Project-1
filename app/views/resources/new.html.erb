@@ -1,0 +1,14 @@
+<h1>New Resource</h1>
+
+<%= form_for @resource do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%# <%= f.label :language_id %> %>
+  <%= hidden_field_tag :repo_id, params[:repo_id] %>
+
+  <%= f.submit %>
+<% end %>

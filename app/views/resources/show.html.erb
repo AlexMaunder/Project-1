@@ -1,0 +1,11 @@
+<h1><%= @resource.title %></h1>
+
+<ul>
+  <li>Title: <%= @resource.title %></li>
+  <% if @resource.url.present? %>
+    <li>URL: <%= link_to @resource.url %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit Resource', edit_resource_path(@resource) %>
+<%= button_to 'Delete Resource', @resource, :method => 'delete' %>
