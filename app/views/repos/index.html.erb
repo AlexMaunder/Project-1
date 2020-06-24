@@ -1,0 +1,13 @@
+<h1>My Repo's</h1>
+
+<% @current_user.repos.each do |repo| %>
+  <% if repo.present? %>
+    <p>
+      Repo:
+      <%= link_to repo.title, repo %>
+    </p>
+  <% end %>
+<% end %>
+
+
+<%= link_to 'New Repo', new_repo_path %>

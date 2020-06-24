@@ -1,6 +1,14 @@
 class ReposController < ApplicationController
   before_action :check_for_login
 
+  def index
+    @repos = Repo.all
+  end
+
+  def show
+    @repo = Repo.find params[:id]
+  end
+
   def new
     @repo = Repo.new
   end
@@ -8,7 +16,7 @@ class ReposController < ApplicationController
   def create
     repo = Repo.create repo_params
     @current_user.repos << repo
-    redirect_to root_path
+    redirect_to repos_path
   end
 
   private

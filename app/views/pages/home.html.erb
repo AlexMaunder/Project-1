@@ -2,9 +2,7 @@
 <p>Pages#Home - Find me in app/views/pages/home.html.erb</p>
 
 <% if @current_user.present? %>
-  <marquee>
-    <h2>WELCOME BACK <%= @current_user.email %></h2>
-  </marquee>
+    <h2>Welcome back <%= @current_user.email %></h2>
 <% end %>
 
 

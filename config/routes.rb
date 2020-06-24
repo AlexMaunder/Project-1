@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
-  resources :repos, :only => [:new, :create]
+  resources :repos
+  # resources :resources, :only => [:index]
+
+  # get '/resources/:repo_id' => 'resources#index', :as => 'resources'
 end
