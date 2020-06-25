@@ -8,10 +8,7 @@
   <%= f.text_field :url, :required => true %>
 
   <%= f.label :language_id %>
-  <%= f.select :language_id, Language.order(:title) { |p| [ p.id, p.title ] }, include_blank: true %>
-  <%# <%= f.collection_check_boxes :language_id, Language.order(:title),:id,:title do |u| %> %>
-    <%# <%= @resource.update(:language_id => Language.each.id) %> %>
-  <%# <% end %> %>
+  <%= f.collection_select :language_id, Language.all,:id,:title %>
 
   <%= hidden_field_tag :repo_id, params[:repo_id] %>
 

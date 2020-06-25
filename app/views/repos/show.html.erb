@@ -6,11 +6,11 @@
     <% end %>
   </h5>
 
-<%# <%= @repo.resources.group_by{ |i| i.language.image}.each %> %>
-<%# <%= image_tag language.image, :class => 'thumb' if language.image.present? %> %>
-
-<% @repo.resources_by_language.each do |language, resources| %>
-    <%= language %> Resources:
+<% @repo.resources_by_language.each do |id, resources| %>
+      <% @language = Language.find(id) %>
+      <%= image_tag @language.image, :class => 'thumb' if id.present? %>
+      <%= @language.title if id.present? %>
+    Resources:
     <p></p>
       <% resources.each do |resource| %>
         <%= link_to resource.title, resource_path(resource.id, :repo_id => @repo.id) %>
@@ -18,8 +18,6 @@
     <% end %>
     <br>
 <% end %>
-
-<%# <%= raise "hell" %> %>
 
 
 <%= link_to 'New Resource', new_resource_path(:repo_id => @repo.id) %>
@@ -29,4 +27,4 @@
 <br>
 <br>
 <br>
-<%= button_to 'Delete Repo', @repo, :method => 'delete' %>
+<%= button_to 'Delete Repo', @repo, data: {confirm: 'Are you sure?'}, :method => 'delete' %>

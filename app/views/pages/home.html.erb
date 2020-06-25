@@ -10,24 +10,28 @@
 
 <h3>Current languages:</h3>
 <ul>
+  <% @lang.each do |language| %>
   <li>
-  <%= @lang[0]["title"] %>
-  <%= image_tag @lang[0]["image"], :class => 'thumb' if @lang[0]["image"].present? %>
+    <%= language.title %>
+    <%= image_tag language.image, :class => 'thumb' if language.image.present? %>
+  <% end %>
   </li>
-  <br>
-  <li>
-  <%= @lang[1]["title"] %>
-  <%= image_tag @lang[1]["image"], :class => 'thumb' if @lang[1]["image"].present? %>
-  </li>
-  <br>
-  <li>
-  <%= @lang[2]["title"] %>
-  <%= image_tag @lang[2]["image"], :class => 'thumb' if @lang[2]["image"].present? %>
-  </li>
-  <br>
-  <li>
-  <%= @lang[3]["title"] %>
-  <%= image_tag @lang[3]["image"], :class => 'thumb' if @lang[3]["image"].present? %>
-  </li>
-  <br>
+</ul>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<ul style="list-style-type:none">
+<% if @current_user.present? %>
+  <%= form_for @language do |f| %>
+<li><%= f.text_field :title, :required => true, :placeholder => "New Language" %></li>
+<li><%= f.url_field :image, :placeholder => "Image Link" %></li>
+  <h5>
+    <%= f.submit "Add Language" %>
+    <% end %>
+  </h5>
+<% end %>
 </ul>

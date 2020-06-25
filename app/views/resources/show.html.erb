@@ -3,10 +3,12 @@
 <ul>
   <li>Title: <%= @resource.title %></li>
   <% if @resource.url.present? %>
-    <li>URL: <%= link_to @resource.url %></li>
+    <li>URL: <a href="<%= @resource.url %>"><%= @resource.url %></a></li>
   <% end %>
 </ul>
 
+<trix-editor autofocus=true></trix-editor>
+
 
 <%= link_to 'Edit Resource', edit_resource_path(@resource, :repo_id => params["repo_id"]) %>
-<%= button_to 'Delete Resource', @resource, :method => 'delete' %>
+<%= button_to 'Delete Resource', @resource, data: {confirm: 'Are you sure?'}, :method => 'delete' %>

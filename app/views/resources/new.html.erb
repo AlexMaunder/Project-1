@@ -2,10 +2,10 @@
 
 <%= form_for @resource do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, :autofocus => true %>
 
   <%= f.label :url %>
-  <%= f.text_field :url %>
+  <%= f.url_field :url %>
 
   <%= f.label :language_id %>
   <%= f.collection_select :language_ids, Language.order(:title),:id,:title %>

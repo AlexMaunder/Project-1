@@ -2,7 +2,7 @@
 
 <%= form_for @repo do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, :autofocus => true %>
 
   <%= f.submit %>
 <% end %>

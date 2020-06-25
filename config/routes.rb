@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   resources :repos
   resources :resources # , :only => [:index]
 
+  resources :languages
+
   # get '/resources/:repo_id' => 'resources#index', :as => 'resources'
 end

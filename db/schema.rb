@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_23_020925) do
+ActiveRecord::Schema.define(version: 2020_06_25_054721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,20 @@ ActiveRecord::Schema.define(version: 2020_06_23_020925) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "languages_repos", id: false, force: :cascade do |t|
+    t.integer "language_id"
+    t.integer "repo_id"
+  end
+
   create_table "languages_resources", id: false, force: :cascade do |t|
     t.integer "language_id"
     t.integer "resource_id"
     t.integer "book_id"
+  end
+
+  create_table "languages_users", id: false, force: :cascade do |t|
+    t.integer "language_id"
+    t.integer "user_id"
   end
 
   create_table "repos", force: :cascade do |t|
@@ -52,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_06_23_020925) do
   create_table "resources", force: :cascade do |t|
     t.text "title"
     t.text "url"
-    t.integer "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
