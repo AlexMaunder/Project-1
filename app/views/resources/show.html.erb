@@ -6,9 +6,13 @@
     <li>URL: <a href="<%= @resource.url %>"><%= @resource.url %></a></li>
   <% end %>
 </ul>
-
-<trix-editor autofocus=true></trix-editor>
-
-
 <%= link_to 'Edit Resource', edit_resource_path(@resource, :repo_id => params["repo_id"]) %>
+
+<br><br>
+<%= form_with model: @put, local: true do |f| %>
+  <trix-editor autofocus=true><%= f.text_field :body, as: :trix_editor, :required => true %></trix-editor>
+  <%= f.submit %>
+<% end %>
+<br><br>
+
 <%= button_to 'Delete Resource', resource_path(@resource, :repo_id => params["repo_id"]), data: {confirm: 'Are you sure?'}, :method => 'delete' %>

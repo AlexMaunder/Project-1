@@ -9,8 +9,9 @@
 
   <%= f.label :language_id %>
   <%= f.collection_select :language_ids, Language.all,:id,:title %>
+  <%= link_to "New Language", root_path %>
 
   <%= hidden_field_tag :repo_id, params[:repo_id] %>
-
+  <br><br>
   <%= f.submit %>
 <% end %>

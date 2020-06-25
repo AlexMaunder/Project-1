@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   resources :repos
-  resources :resources # , :only => [:index]
+  post '/resources/:id' => 'resources#update'
+  resources :resources
 
   resources :languages
 
