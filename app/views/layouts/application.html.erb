@@ -7,15 +7,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">
     <link rel="stylesheet" type="text/css" href="trix.css">
+    <link rel="stylesheet" href="/assets/dark-mode.css">
+    <script src="/assets/dark-mode-switch.js"></script>
     <script type="text/javascript" src="trix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>CodeConqr</title>
 
   </head>
 
-  <body>
+  <body style="background-image: url('assets/cool-background.png');">
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="darkSwitch">
+      <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+    </div>
+    <div class="container" >
     <nav>
       <%= link_to 'Home', root_path %>
       |
@@ -26,14 +33,17 @@
         <% end %>
         <%= link_to "Repo's", repos_path %>
         |
-        <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete' %>
-        You are logged in as <%= @current_user.email %>
+        You are logged in as <%= @current_user.email %> -
+        <%= link_to "Log out", login_path, :method => 'delete' %>
       <% else %>
         <%= link_to 'Sign Up', new_user_path %>
         |
         <%= link_to 'Sign In', login_path %>
       <% end %>
     </nav>
+    <div class="bg-dark text-light px-2">
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>

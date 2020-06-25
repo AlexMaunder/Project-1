@@ -2,15 +2,16 @@
 
 <%= form_for @resource do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title, :autofocus => true %>
+  <%= f.text_field :title, :autofocus => true, :class => 'form-control' %>
 
   <%= f.label :url %>
-  <%= f.url_field :url %>
+  <%= f.url_field :url, :class => 'form-control' %>
 
   <%= f.label :language_id %>
-  <%= f.collection_select :language_ids, Language.order(:title),:id,:title %>
+  <%= f.collection_select :language_ids, Language.order(:title),:id,:title, :class => 'form-control' %>
 
   <%= hidden_field_tag :repo_id, params[:repo_id] %>
-
-  <%= f.submit %>
+  <br>
+  <%= f.submit nil, :class => 'btn btn-primary' %>
 <% end %>
+<br>
