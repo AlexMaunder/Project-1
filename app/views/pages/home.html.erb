@@ -15,6 +15,7 @@
     <li>
       <%= language.title %>
       <%= image_tag language.image, :class => 'thumb' if language.image.present? %>
+      <div><%= link_to "delete", {:controller => "languages", :action => "destroy", :id => language.id }, data: {confirm: 'Are you sure?'}, :method => 'delete' %></div>
     <% end %>
     </li>
   </ul>
