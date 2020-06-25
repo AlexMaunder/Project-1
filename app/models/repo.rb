@@ -1,6 +1,7 @@
 class Repo < ApplicationRecord
   belongs_to :user, :optional => true
   has_and_belongs_to_many :resources
+  # before_destroy { resources.clear }
   has_and_belongs_to_many :languages
   has_many :books, :through => :resources
 

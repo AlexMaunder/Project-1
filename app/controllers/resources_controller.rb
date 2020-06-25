@@ -32,7 +32,7 @@ class ResourcesController < ApplicationController
   def destroy
     resource = Resource.find params[:id]
     resource.destroy
-    redirect_to repos_path
+    redirect_to repo_path(params[:repo_id])
   end
 
   private
