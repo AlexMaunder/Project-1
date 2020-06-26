@@ -17,16 +17,16 @@ Bcrypt: 3.1.13
 
 PostgreSQL
 
-
+#
 
 CodeConqr was built to resolve the need for a interactive programming knowledgebase.
 
 CodeConqr was built utilising a full CRUD system for Languages, Resources, Users and features:
- - [] Null checks and other edge cases
- - [] Admin users
- - [] Dynamic redirects
- - [] Trix interactive text editor
- - [] Varied Active Record Associations (HABTM, MTM etc)
+ * Null checks and other edge cases
+ * Admin users
+ * Dynamic redirects
+ * Trix interactive text editor
+ * Varied Active Record Associations (HABTM, MTM etc)
 
 ![alt text](https://github.com/AlexMaunder/Project-1/blob/master/app/assets/images/proj1.png)
 
@@ -40,6 +40,6 @@ OR with JS: https://github.com/bevacqua/dragula | https://bevacqua.github.io/dra
 
 3. Dependant destroy (Rails method to delete all dependants when the parent is destroyed – destroy all resources when Repo is destroyed).
 
-4. Dark mode 
+4. Dark mode
 
 Deployed using Heroku
