@@ -9,7 +9,7 @@
 <%= link_to 'Edit Resource', edit_resource_path(@resource, :repo_id => params["repo_id"]) %>
 
 <br><br>
-<%= form_with model: @put, local: true do |f| %>
+<%= form_with do |f| %>
   <trix-editor autofocus=true><%= f.text_field :body, as: :trix_editor, :required => true %></trix-editor>
   <%= f.submit nil, :class => 'btn btn-primary'%>
 <% end %>

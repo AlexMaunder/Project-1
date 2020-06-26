@@ -13,7 +13,7 @@
 
   </head>
 
-  <body style="background-image: url('assets/cool-background.png'); background-size: cover; background-repeat: no-repeat;">
+  <body style="background-image: url('/assets/cool-background.png'); background-size: cover; background-repeat: no-repeat;">
     <div class="container" >
     <nav>
       <%= link_to 'Home', root_path %>
@@ -33,7 +33,7 @@
         <%= link_to 'Sign In', login_path %>
       <% end %>
     </nav>
-    <div class="bg-dark text-light px-2">
+    <div class="bg-dark text-light px-2 rounded" style="opacity: 0.85;">
     <%= yield %>
     </div>
     </div>
