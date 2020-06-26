@@ -28,7 +28,7 @@ CodeConqr was built utilising a full CRUD system for Languages, Resources, Users
  - Trix interactive text editor
  - Varied Active Record Associations (HABTM, MTM etc)
 
-![alt text]()
+![alt text](https://github.com/AlexMaunder/Project-1/blob/master/app/assets/images/proj1.png)
 
 
 Deployed using Heroku
