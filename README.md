@@ -1,24 +1,34 @@
-# README
+# CodeConqr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+There are so many amazing resources available online but it's difficult to keep track of them all. CodeConqr is here to solve that!
 
-Things you may want to cover:
+Track online courses, resources and coding languages with CodeConqr.
 
-* Ruby version
 
-* System dependencies
+Ruby version: 2.7.1
 
-* Configuration
+Rails version: 5.2.4.3
 
-* Database creation
+Bootstrap
 
-* Database initialization
+Trix version: 0.10.1
 
-* How to run the test suite
+Bcrypt: 3.1.13
 
-* Services (job queues, cache servers, search engines, etc.)
+PostgreSQL
 
-* Deployment instructions
 
-* ...
+
+CodeConqr was built to resolve the need for a interactive programming knowledgebase.
+
+CodeConqr was built utilising a full CRUD system for Languages, Resources, Users and features:
+ - Null checks and other edge cases
+ - Admin users
+ - Dynamic redirects
+ - Trix interactive text editor
+ - Varied Active Record Associations (HABTM, MTM etc)
+
+![alt text]()
+
+
+Deployed using Heroku
