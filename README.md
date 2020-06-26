@@ -15,7 +15,7 @@ Trix version: 0.10.1
 
 Bcrypt: 3.1.13
 
-PostgresSQL
+PostgreSQL
 
 
 
@@ -24,10 +24,11 @@ CodeConqr was built to resolve the need for a interactive programming knowledgeb
 CodeConqr was built utilising a full CRUD system for Languages, Resources, Users and features:
  - Null checks and other edge cases
  - Admin users
- - Intuitive redirects
+ - Dynamic redirects
  - Trix interactive text editor
  - Varied Active Record Associations (HABTM, MTM etc)
 
+![alt text]()
 
 
 Deployed using Heroku
