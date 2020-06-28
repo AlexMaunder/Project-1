@@ -5,23 +5,23 @@ There are so many amazing resources available online but it's difficult to keep 
 Track online courses, resources and coding languages with CodeConqr.
 
 
-Ruby version: 2.7.1
+* Ruby version: 2.7.1
 
-Rails version: 5.2.4.3
+* Rails version: 5.2.4.3
 
-Bootstrap
+* Bootstrap
 
-Trix version: 0.10.1
+* Trix version: 0.10.1
 
-Bcrypt: 3.1.13
+* Bcrypt: 3.1.13
 
-PostgreSQL
+* PostgreSQL
 
 #
 
 CodeConqr was built to resolve the need for a interactive programming knowledgebase.
 
-CodeConqr was built utilising a full CRUD system for Languages, Resources, Users and features:
+CodeConqr was built utilising a full CRUD system for Languages, Resources & Users. It features:
  * Null checks and other edge cases
  * Admin users
  * Dynamic redirects
@@ -38,8 +38,14 @@ OR with JS: https://github.com/bevacqua/dragula | https://bevacqua.github.io/dra
 
 2. CRUD for Books
 
-3. Dependant destroy (Rails method to delete all dependants when the parent is destroyed – destroy all resources when Repo is destroyed).
+3. Dependent destroy (Rails method to delete all dependants when the parent is destroyed – destroy all resources when Repo is destroyed).
 
 4. Dark mode
+
+5. Percentage of course completion
+
+6. Access code course sites and pull account info (Udemy etc). Nokigiri API using "Mechanism".
+
+
 
 Deployed using Heroku
